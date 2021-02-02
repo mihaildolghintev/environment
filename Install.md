@@ -6,7 +6,7 @@
 Remove unnecessary packages:
 
 ```sh
-sudo dnf remove cheese rhythmbox gnome-boxesd orca gnome-contacts samba-client gnome-getting-started-docs nautilus-sendto gnome-characters gnome-maps gnome-photos simple-scan virtualbox-guest-additions gedit gnome-boxes
+sudo dnf remove cheese gnome-boxesd orca gnome-contacts samba-client gnome-getting-started-docs nautilus-sendto gnome-characters gnome-maps gnome-photos simple-scan virtualbox-guest-additions gedit gnome-boxes
 ```
 
 Add RPM Fusion:
@@ -44,60 +44,6 @@ Install GNOME Tweaks:
 sudo dnf install gnome-tweak-tool
 ```
 
-* **General:** enable Over-Amplification.
-* **Top Bar:** enable Battery Percentage, Date, and Seconds.
-* **Window Titlebars:** Double-Click: toggle maximize vertical,
- Middle-Click: toggle maximize.
-* **Keyboard & Mouse:** enable Middle Click Paste and Adaptive
- in Acceleration Profile.
-* **Windows:** disable Edge Tiling.
-* **Fonts:** monospace to JetBrains Mono.
-
-Set application folder:
-
-```sh
-gsettings set org.gnome.desktop.app-folders folder-children "['Utilities']"
-gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Utilities/ name 'Utilities'
-gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Utilities/ apps "['gnome-system-log.desktop', 'gnome-system-monitor.desktop', 'org.gnome.Screenshot.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.baobab.desktop']"
-```
-
-
-### Folders
-
-Create empty file template:
-
-```sh
-mkdir ~/.local/share/desktop
-mkdir ~/.local/share/templates
-touch ~/.local/share/templates/Empty\ file
-```
-
-Fix folders at `~/.config/user-dirs.dirs`:
-
-```sh
-XDG_DESKTOP_DIR="$HOME/.local/share/desktop"
-XDG_DOWNLOAD_DIR="$HOME/Downloads"
-XDG_TEMPLATES_DIR="$HOME/.local/share/templates"
-XDG_PUBLICSHARE_DIR="$HOME/"
-XDG_DOCUMENTS_DIR="$HOME/"
-XDG_MUSIC_DIR="$HOME/"
-XDG_PICTURES_DIR="$HOME/"
-XDG_VIDEOS_DIR="$HOME/Videos"
-```
-
-Clean bookmarks:
-
-```sh
-echo "" > ~/.config/gtk-3.0/bookmarks
-```
-
-Remove unnecessary folders:
-
-```sh
-rm -R ~/Documents ~/Pictures ~/Music ~/Public ~/Templates ~/Desktop
-```
-
-
 ### Additional Software
 
 Install codecs:
@@ -125,12 +71,6 @@ sudo dnf install fedora-workstation-repositories
 sudo dnf config-manager --set-enabled google-chrome
 sudo dnf install google-chrome-stable
 ```
-
-Download [VPN config](https://www.expressvpn.com/ru/setup#manual) for Hong Kong.
-
-Left only Telegram, Firefox, Nautilus, and Terminal, VS Code, Yubico 2FA,
-Software in the dock.
-
 
 ### Development Tools
 
